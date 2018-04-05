@@ -1,0 +1,25 @@
+.game__word {
+    display: table;
+    margin: 0 auto;
+    width: auto;
+    &-letter {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        font-size: 32px;
+        text-transform: uppercase;
+        background: $white;
+        border-radius: 5px;
+        text-align: center;
+        margin: 0 5px;
+        &-val {
+            opacity: 0;
+            transition: .4s ease;
+        }
+        &.guessed {
+            .game__word-letter-val {
+                opacity: 1;
+            }
+        }
+    }
+}

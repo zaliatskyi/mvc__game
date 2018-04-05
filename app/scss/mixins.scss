@@ -1,0 +1,55 @@
+@mixin transition($time, $type) {
+  -webkit-transition: #{$time}s $type;
+     -moz-transition: #{$time}s $type;
+       -o-transition: #{$time}s $type;
+      -ms-transition: #{$time}s $type;
+          transition: #{$time}s $type;
+}
+@mixin textShadow($r, $g, $b, $opacity) {
+  text-shadow: 0 0 0 rgba($r, $g, $b, $opacity);
+}
+@mixin boxShadow($vert, $distance, $blur, $spread, $r, $g, $b, $opacity) {
+  -webkit-box-shadow: #{$vert}px #{$distance}px #{$blur}px #{$spread}px rgba($r, $g, $b, $opacity);
+     -moz-box-shadow: #{$vert}px #{$distance}px #{$blur}px #{$spread}px rgba($r, $g, $b, $opacity);
+          box-shadow: #{$vert}px #{$distance}px #{$blur}px #{$spread}px rgba($r, $g, $b, $opacity);
+}
+@mixin centerX() {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin centerY() {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+@mixin centerXY() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin lettersp($font,$spacing) {
+  letter-spacing: $font * $spacing / 1000 * 1px;
+}
+@mixin blocksRow($amount, $marginRight) {
+  width: calc((100% - #{$marginRight}px * #{$amount - 1} ) / #{$amount});
+  margin-right: #{$marginRight}px;
+  &:nth-child(n) {
+    margin-right: #{$marginRight}px;
+  }
+  &:nth-child(#{$amount}n) {
+    margin-right: 0;
+  }
+}
+
+@mixin unblock() {
+  width: auto;
+  margin-right: auto;
+  &:nth-child(n) {
+    width: auto;
+    margin-right: auto;
+  }
+}
